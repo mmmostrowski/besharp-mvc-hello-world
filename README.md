@@ -1,211 +1,89 @@
-# BeSharp ( version 0.1.0 )
+# BeSharp MVC Hello World 
 
-##   Object-Oriented Programming Framework for Bash 4.4+
+## Demo Showcase App for BeSharp Framework 
+
+---
+Intention of this project is a feedback about [BeSharp Framework](https://github.com/mmmostrowski/besharp). 
 
 ---
 
-Intention of this framework is to bring an OOP paradigm to the Bash language.
+### Reasoning
+This Hello World App itself isn't particularly useful.
 
----
-**DISCLAIMER**
+Its purpose is to show BeSharp Framework OOP code layout in action, and to test various OOP patterns, like composition, decoration, events, factories, etc.
 
-**Project is on the eager phase of the development process!**
+Even if MVC pattern is not very natural for Bash, it's giving a good visual feedback about OOP itself.
+Rendering GUI is also a CPU resource demanding task, therefore it is a good field for performance research & optimizations.
 
-**No backward compatibility guaranteed!**
+In a typical Bash-like applications we would rather expect to have classes like `Credentials` or `DockerParamsGenerator`, instead of `WidgetsTree`.      
 
-**Use at your own risk!**
-
----
-### Reasoning:
-
-There are many mature OOP programming languages on the market.
-If OOP language is needed, Bash and BeSharp Framework is probably **not** the best choice, in compare to languages like Java or Python.
-
-Bash code is expected to be in form of small procedural scripts.
-
-However, sometimes Bash scripts getting larger when new requirements coming up.
-It's not always obvious when is the exact moment to abandon growth of Bash scripts and to rewrite them in a modern language from scratch.
-
-Sometimes bringing a modern programming language(s) to the workstation(s), with all dependencies, is a challenging task itself.
-Bash is often used for this purpose. Bash is the one which is available on many of Unix workstation, out of the box.
-
-What if we could write `apt-get install` related logic in an OOP manner? <br>
-What if Bash was supporting for OOP technics in the first place? <br>
-Would shell script survived the growth?<br>
-
-BeSharp Framework is trying to answer for these questions.  
-
-
----
-### Features list:
-  - classes, objects, fields, methods, semi-static classes,
-  - interfaces, inheritance, abstract methods, abstract classes,
-  - $this, object pointers mechanics, oop-like syntax,
-  - returning values from methods,
-  - parent methods calling,
-  - setters & getters overriding, 
-  - objects cloning,
-  - looping && iterators,
-  - built-in dependency injection, automatic *Factory classes,
-  - system of collections:
-    - vectors,
-    - lists,
-    - maps,
-    - sets,
-    - queues, 
-    - stacks,
-    - priority queues & pairing heaps,
-  - compiler and runtime for *.be.sh files, 
-  - different app linking and building strategies,
-  - ability for plugins.
-  
 ---
 
 ### Quick start
 
 If you have Docker available on your workstation, please run demo showcase app:
 ```shell
-docker run -it --rm mmmostrowski/besharp-mvc-hello-world
+docker run -it --rm --pull always mmmostrowski/besharp-mvc-hello-world
 ```
-Please visit [demo app project page](https://github.com/mmmostrowski/besharp-mvc-hello-world) for further instructions.   
+
+The source code for this app can be found in `/app/src/` [folder](https://github.com/mmmostrowski/besharp-mvc-hello-world/tree/main/app/src). 
 
 ---
-### How to run
-
-Framework is mainly built of two components:  
- - **Compiler** - transforms BeSharp OOP code into *.be.sh distribution files,
- - **Runtime** - executes BeSharp *.be.sh files on a native Bash 4.4+.
- 
-These components might be combined into single shell script, or be separated. 
-It depends on the given building preset. 
-
-#### building presets
-
-There are four default building presets available for your app:
-  - `single-script` (default) 
-    - compiles your app code and BeSharp Runtime code into single *.sh script, 
-    - client workstation is not required to have BeSharp Runtime installed,
-    - all code is loaded at once during start,
-  - `single-script-noruntime` 
-    - compiles your app code into single *.sh, but without including Besharp Runtime in it,
-    - client workstation is required to have BeSharp Runtime installed,
-    - all code is loaded at once during start,
-  - `multi-file` 
-    - compiles your app into series of *.be.sh files, including BeSharp Runtime *.be.sh file, 
-    - client workstation is not required to have BeSharp Runtime installed,
-    - code is loaded dynamically, "when needed" by the app runtime,
-  - `multi-file-noruntime` 
-    - compiles your app into series of *.be.sh files, but without including Besharp Runtime *.be.sh file,
-    - client workstation is required to have BeSharp Runtime installed,
-    - code is loaded dynamically, "when needed" by the app runtime,
-    
-_Note: You can choose default preset in the `default.preset` file._
-
-#### development 
- 
-Your app source code is in the `/app/src/` folder.
-Target distribution code can be found in the `/app/dist/<preset>/` folders.
-
-There are two modes available for the development:
-  - `develop` - gives better experience for the development:
-     - Bash is showing errors in our direct source files,
-     - more code verifications occurring during code runtime,
-     - works slower.
-  - `production` - executes final production code:
-     - works faster due to compiler code optimizations being applied,
-     - some code verifications are off,
-     - Bash is showing errors in target distribution files, which makes debugging harder.  
-     
-BeSharp framework provides three basic commands to establish a development workflow:
-  - `run` 
-     - compiles source code and executes produced distribution code in the *production* mode,    
-  - `develop` 
-     - compiles source code and executes it in the *development* mode,
-  - `build` 
-     - compiles source code into distribution code, for all presets, without executing it.
-
-
 ### Develop locally
 
-#### 1. When Docker Engine is available
+**Warning: Make sure you have a Docker Engine available on your machine!**
 
-Please open BeSharp terminal:
-- **on Linux / MacOs** - please run `./besharp` from the project folder,
- - **on Windows** - please run `besharp.bat` from the project folder.
+_Note: If you have no Docker installed on your machine, please follow installation instructions from [BeSharp Framework](https://github.com/mmmostrowski/besharp) project page._    
 
----
-To run app in a **production** mode:
 
+1. Clone project to a local folder. Open it in your favorite IDE.
+2. Open BeSharp terminal:
+   - **on Linux / MacOs** - please run `./besharp` from the project folder,
+   - **on Windows** - please run `besharp.bat` from the project folder.
+3. Please run `run` command from the BeSharp terminal. You should have the app working.
+4. Please quit the app (e.x. hit `CTRL + C`).
+5. In your IDE, please open `AppState.sh` file. Please change line:
 ```shell
-run [ your app params ... ]
-
-# to run given preset
-run --preset <preset> [ your app params ... ]
-
-# to force compilation of all files, instead of compiling only changed files
-run --compile-all [ your app params ... ]
+@var isHelloWorldColorsEnabled = false
 ```
-
----
-To run app in a **developer** mode:  
-
+to
 ```shell
-develop [ params ... ]
-
-# to run given preset
-develop --preset <preset> [ your app params ... ]
-
-# to force compilation of all files, instead of compiling only changed files
-develop --compile-all [ your app params ... ]
+@var isHelloWorldColorsEnabled = true
 ```
-
-To build the project into `dist/` folders, **without running it**:
-
+6. In BeSharp terminal, please run `run` again. <br> 
+   You should now see a colored _"Hello world !"_ text, by default. <br>
+   Please notice how widget data binding mechanism has changed upper right corner checkbox state accordingly.   
+7. Please quit app again (e.x. hit `CTRL + C`). Please go back to your IDE, open `HelloWorldWidget.sh` file, and change line:
 ```shell
-build
-
-# to build given preset
-build --preset <preset> [ your app params ... ]
-
-# to force compilation of all files, instead of compiling only changed files
-build --compile-all [ your app params ... ]
+@let color = @pixel_modes.randomColor
 ```
-
-To run the project on the native Bash on Linux/Unix host machine, instead of BeSharp docker terminal:
+to
 ```shell
-./besharp build --preset <preset> \
-   &&  ./app/dist/<preset>/app  [ your app params ... ]
+@let color = @pixel_modes.magento
 ```
-
-#### 2. When NO Docker Engine is available
-
-BeSharp Framework has been developed and tested on **Ubuntu 20.04**. 
-If you have no Docker installed, you might want to try to execute BeSharp Framework directly on the host machine. See below examples:
+8. Please `run` again. You should get an error message, something similar to:
 ```shell
-./bin/run [ your app params ... ]
-
-./bin/develop [ your app params ... ]
-
-./bin/build --compile-all 
+./app: line 30597: @pixel_modes.magento: command not found
 ```
+It would be hard to debug such an error message. The file `app/dist/single-script/app` is huge!<br>
+   
+10. Let's now run `develop` command instead of `run` command in the BeSharp terminal.<br>
+Now, we can easily read from the given stacktrace, where the error exactly comes from: 
+```shell
+...
+     at: HelloWorldWidget.draw()   /besharp/app/src/View/Widgets/HelloWorldWidget.sh:91 
+...
+```
+11. Ok. Let's fix the bug. Please search for "`@static { @pixel_modes }`" phrase in your IDE.<br>
+    `PixelModes.sh` file is where a solution for our bug can be found:
+```shell
+    @var magenta = "\e[95m"
+```
+12. Now replace `magento` to `magenta` in the `HelloWorldWidget.sh` file and run `run` again.
 
----
-### Roadmap
 
-What is planned next?
-  - documentation and tutorials,
-  - working on performance,
-  - writing automated tests ( unit tests, performance tests, ... ),
-  - more syntax sugar ( e.x. to decrease amount of `@let` instructions in the code )
-  - testing and adapting architecture to various business scenarios,
-  - support for older Bash 4.3- versions,
-  - more code validations and better communication with the user, 
-  - more language features: constants, enums, namespaces, public/private/protected visibility modifiers, "@final" keyword, etc.
-  - better debugger & development tooling,
-  - working on bigger OOP framework code base ( e.x. utils for strings, dates & float numbers, enhance collections, support for parallel programming, etc. )
-  - providing a packaging system allowing to publish and share code easily between developers,  
-  - considering Bash 3+ support,
-  - more ...
+<br>
+Voilà. You've just made your first development session in BeSharp Framework!
 
 ---
 
