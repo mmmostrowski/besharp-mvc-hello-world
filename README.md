@@ -88,5 +88,3 @@ Voilà. You've just made your first development session in BeSharp Framework!
 ---
 
 BeSharp by Maciej Ostrowski (c) 2022
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=D5QRLBDCRZSY4)
