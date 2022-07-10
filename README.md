@@ -8,9 +8,7 @@ Intention of this project is a feedback about [BeSharp Framework](https://github
 ---
 
 ### Reasoning
-This Hello World App itself isn't particularly useful.
-
-Its purpose is to show BeSharp Framework OOP code layout in action, and to test various OOP patterns, like composition, decoration, events, factories, etc.
+Purpose of this Hello World App is to show BeSharp Framework OOP code layout in action, and to test various OOP patterns, like composition, decoration, events, factories, etc.
 
 Even if MVC pattern is not very natural for Bash, it's giving a good visual feedback about OOP itself.
 Rendering GUI is also a CPU resource demanding task, therefore it is a good field for performance research & optimizations.
@@ -23,7 +21,8 @@ In a typical Bash-like applications we would rather expect to have classes like 
 
 If you have Docker available on your workstation, please run demo showcase app:
 ```shell
-docker run -it --rm --pull always mmmostrowski/besharp-mvc-hello-world
+docker pull mmmostrowski/besharp-mvc-hello-world \
+  && docker run -it --rm mmmostrowski/besharp-mvc-hello-world
 ```
 
 The source code for this app can be found in `/app/src/` [folder](https://github.com/mmmostrowski/besharp-mvc-hello-world/tree/main/app/src). 
