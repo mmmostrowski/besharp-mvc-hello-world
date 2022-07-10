@@ -215,8 +215,8 @@
 
         @let isFocused = $context.focusedFlag
         @let isHighlighted = $context.isHighlighted
-        @let activeColor = @pixel_modes.bold
-        @let inactiveColor = @pixel_modes.lGray
+        @let activeColor = @pixel_modes.white
+        @let inactiveColor = @pixel_modes.dGray
 
         @let tabNames = $this.tabNames
         @let tabNamesSize = $tabNames.size
@@ -233,7 +233,7 @@
                         (( x1 += ${#tabName} ))
                         (( x1 += 10 ))
                     else
-                        $printer.printText $canvas "${x1}" "${y1}" "[ ${tabName} ]"
+                        $printer.printText $canvas "${x1}" "${y1}" "[ ${tabName} ]" "${inactiveColor}"
                         (( x1 += ${#tabName} ))
                         (( x1 += 6 ))
                     fi

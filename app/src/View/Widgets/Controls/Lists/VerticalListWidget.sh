@@ -63,6 +63,7 @@
         @let selButtonStyle = @pixel_modes.bgLGray
         @let color1 = @pixel_modes.lYellow
         @let color2 = @pixel_modes.dGray
+        @let dotsColor = @pixel_modes.dGray
 
         local style="${buttonStyle}${color1}"
         local selectedStyle="${selButtonStyle}${color2}"
@@ -138,7 +139,7 @@
         done
 
         if $showDots; then
-            $canvasPrinter.printText $canvas "${x1}" "${moreIndicatorPlacement}" "..."
+            $canvasPrinter.printText $canvas "${x1}" "${moreIndicatorPlacement}" "..." "${dotsColor}"
         fi
     }
 

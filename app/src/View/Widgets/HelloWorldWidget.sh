@@ -8,8 +8,6 @@
 
     @var boldFormat = ''
 
-    @var format = ''
-
     function HelloWorldWidget.initialize()
     {
         @let $this.boldFormat = @pixel_modes.bold
@@ -78,11 +76,9 @@
         @let x = $context.x1
         @let y = $context.y1
 
-
+        local format=''
         if @true $this.isBoldEnabled; then
             @let format = $this.boldFormat
-        else
-            @let format = $this.format
         fi
 
         if @true $this.isColorsEnabled; then
@@ -92,7 +88,8 @@
                 $canvas.putPixel "$(( x++ ))" "${y}" "${text:$i:1}" "${format}${color}"
             done
         else
-            $canvasPrinter.printText $canvas "${x}" "${y}" "${text}" "${format}"
+            @let color = @pixel_modes.white
+            $canvasPrinter.printText $canvas "${x}" "${y}" "${text}" "${format}${color}"
         fi
     }
 

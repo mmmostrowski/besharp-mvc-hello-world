@@ -150,6 +150,7 @@
     @var helpMarkTextColor = dim
     @var helpDialogPopupTitle = 'Help'
     @var helpDialogCloseButtonTitle = 'close'
+    @var helpDialogColor = "dGray"
     @var helpDialogText = "$(
         echo 'Keyboard control:'
         echo ''
@@ -169,6 +170,7 @@
     # Are You Sure Quit ?
     @var areYouSureQuitPopupTitle = 'Are you sure?'
     @var areYouSureQuitConfirmationText = 'Are you sure you want to quit?'
+    @var areYouSureQuitConfirmationColor = "dGray"
     @var areYouSureQuitYesButtonTitle = 'yes'
     @var areYouSureQuitNoButtonTitle = 'no'
 

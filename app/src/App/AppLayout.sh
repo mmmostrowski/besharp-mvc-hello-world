@@ -558,6 +558,7 @@
             construct: TextWidget \
             bindAppState: \
                 text:$appState.helpDialogText \
+                color:$appState.helpDialogColor \
             placement: 2 1 2 1 \
         ;
     }
@@ -615,6 +616,7 @@
             construct: TextWidget \
             bindAppState: \
                 text:$appState.areYouSureQuitConfirmationText \
+                color:$appState.areYouSureQuitConfirmationColor \
             placement: 4 2 4 2  \
         ;
     }

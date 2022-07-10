@@ -3,6 +3,14 @@
 @static { @pixel_modes }
 @class PixelModes
 
+  function PixelModes()
+  {
+      @let bgReset = $this.bgBlack
+
+      @let reset = $this.reset
+      $this.reset = "${reset}${bgReset}"
+  }
+
   @var reset = "\e[0m"
 
   @var bold = "\e[1m"
@@ -19,30 +27,30 @@
   @var invertedReset = "\e[26m"
   @var hiddenReset = "\e[28m"
 
-  @var black = "\e[30m"
+  @var black = "\e[38;5;232m"
   @var lGray = "\e[37m"
   @var dGray = "\e[90m"
-  @var white = "\e[97m"
+  @var white = "\e[38;5;254m"
 
-  @var red = "\e[31m"
-  @var green = "\e[32m"
-  @var yellow = "\e[33m"
-  @var blue = "\e[34m"
-  @var magenta = "\e[35m"
-  @var cyan = "\e[36m"
+  @var red = "\e[38;5;88m"
+  @var green = "\e[38;5;28m"
+  @var yellow = "\e[38;5;101m"
+  @var blue = "\e[38;5;18m"
+  @var magenta = "\e[38;5;93m"
+  @var cyan = "\e[38;5;26m"
 
-  @var lRed = "\e[91m"
-  @var lGreen = "\e[92m"
-  @var lYellow = "\e[93m"
-  @var lBlue = "\e[94m"
-  @var lMagenta = "\e[95m"
-  @var lCyan = "\e[96m"
+  @var lRed = "\e[38;5;196m"
+  @var lGreen = "\e[38;5;119m"
+  @var lYellow = "\e[38;5;226m"
+  @var lBlue = "\e[38;5;25m"
+  @var lMagenta = "\e[38;5;201m"
+  @var lCyan = "\e[38;5;111m"
 
 
-  @var bgBlack = "\e[40m"
-  @var bgLGray = "\e[47m"
-  @var bgDGray = "\e[100m"
-  @var bgWhite = "\e[107m"
+  @var bgBlack = "\e[48;5;232m"
+  @var bgLGray = "\e[48;5;248m"
+  @var bgDGray = "\e[48;5;238m"
+  @var bgWhite = "\e[48;5;254m"
 
   @var bgRed = "\e[41m"
   @var bgGreen = "\e[42m"

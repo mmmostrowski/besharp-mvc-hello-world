@@ -31,7 +31,9 @@
         @let CanvasPrinter = $this.CanvasPrinter
         @let fps = $this.fps
 
-        $CanvasPrinter.printText $canvas "${x}" "${y}" "FPS ${fps}"
+        @let color = @pixel_modes.dGray
+
+        $CanvasPrinter.printText $canvas "${x}" "${y}" "FPS ${fps}" "${color}"
 
         local currentSecond=""
         currentSecond="$( date +%s 2> /dev/null || true )"

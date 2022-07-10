@@ -10,9 +10,11 @@
         local text="${4}"
         shift 4
 
+        @let bgBlack = @pixel_modes.bgBlack
+
         local i
         for (( i=0; i < ${#text}; i++ )); do
-            $canvas.putPixel "$(( x++ ))" "${y}" "${text:$i:1}" "${@}"
+            $canvas.putPixel "$(( x++ ))" "${y}" "${text:$i:1}" "${bgBlack}" "${@}"
         done
     }
 
@@ -24,6 +26,8 @@
         local text="${4}"
         shift 4
 
+        @let bgBlack = @pixel_modes.bgBlack
+
         local i
         local c=
         for (( i=0; i < ${#text}; i++ )); do
@@ -32,7 +36,7 @@
                 (( x++ ))
                 continue
             fi
-            $canvas.putPixel "$(( x++ ))" "${y}" "${c}" "${@}"
+            $canvas.putPixel "$(( x++ ))" "${y}" "${c}" "${bgBlack}" "${@}"
         done
     }
 
