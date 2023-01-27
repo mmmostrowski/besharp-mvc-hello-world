@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-@class ButtonWidget @implements Widget WidgetWithSize StatefulWidget FocusableWidget AnimatedWidget LayoutChangesListeningWidget
+@class ButtonWidget @implements Widget WidgetWithSize StatefulWidget FocusableWidget AnimatedWidget LayoutChangesListenerWidget
 
     @var @inject CanvasPrinter canvasPrinter
 

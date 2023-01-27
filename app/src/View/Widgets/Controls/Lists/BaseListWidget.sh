@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-@abstract @class BaseListWidget @implements Widget StatefulWidget FocusableWidget AnimatedWidget LayoutChangesListeningWidget
+@abstract @class BaseListWidget @implements Widget StatefulWidget FocusableWidget AnimatedWidget LayoutChangesListenerWidget
 
     @var @inject CanvasPrinter canvasPrinter
 
