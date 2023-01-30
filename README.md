@@ -7,32 +7,39 @@ Intention of this project is a feedback about [BeSharp Framework](https://github
 
 ---
 
+![BeSharp MVC Hello World screenshot](docs/screenshot.png)
+
+
+---
+
 ### Reasoning
-Purpose of this Hello World App is to show BeSharp Framework OOP code layout in action, and to test various OOP patterns, like composition, decoration, events, factories, etc.
+The purpose of this "Hello World" application is to demonstrate the object-oriented code layout of the BeSharp Framework and to test various object-oriented patterns such as composition, decoration, events, and factories.
 
-Even if MVC pattern is not very natural for Bash, it's giving a good visual feedback about OOP itself.
-Rendering GUI is also a CPU resource demanding task, therefore it is a good field for performance research & optimizations.
+The Model-View-Controller (MVC) pattern may not be a natural fit for the Bash programming language, but it provides a good visual representation of object-oriented programming. 
+Additionally, rendering GUI is a resource-intensive task, making it an ideal field for performance research and optimization.
 
-In a typical Bash-like applications we would rather expect to have classes like `Credentials` or `DockerParamsGenerator`, instead of `WidgetsTree`.      
+A typical Bash application would include classes such as `Credentials` or `DockerParamsGenerator` rather than `WidgetsTree`
 
 ---
 
 ### Quick start
 
-If you have Docker available on your workstation, please run demo showcase app:
+To quickly start the demo showcase app, you can use Docker by running the following command:
 ```shell
 docker pull mmmostrowski/besharp-mvc-hello-world \
   && docker run -it --rm mmmostrowski/besharp-mvc-hello-world
 ```
 
-The source code for this app can be found in `/app/src/` [folder](https://github.com/mmmostrowski/besharp-mvc-hello-world/tree/main/app/src). 
+:point_right: The source code of this app can be found under `/app/src/` [folder](app/src). :point_left:
+
+:point_right: The executable Bash script of this application is located in `/app/dist/single-script/app` [file](app/dist/single-script/app). :point_left:
 
 ---
 ### Develop locally
 
-**Warning: Make sure you have a Docker Engine available on your machine!**
+**Warning: Please ensure that you have a Docker Engine installed on your machine before proceeding!**
 
-_Note: If you have no Docker installed on your machine, please follow installation instructions from [BeSharp Framework](https://github.com/mmmostrowski/besharp) project page._    
+_Note: If you do not have Docker installed on your machine, please refer to the installation instructions on the [BeSharp Framework](https://github.com/mmmostrowski/besharp) project page._
 
 
 1. Clone project to a local folder. Open it in your favorite IDE.
@@ -82,8 +89,8 @@ Now, we can easily read from the given stacktrace, where the error exactly comes
 
 
 <br>
-Voilà. You've just made your first development session in BeSharp Framework!
+Congratulations, you have successfully completed your first development session in the BeSharp Framework!
 
 ---
 
-BeSharp by Maciej Ostrowski (c) 2022
+BeSharp by Maciej Ostrowski (c) 2023

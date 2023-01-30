@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-@interface LayoutChangesListeningWidget @implements Widget
+@interface LayoutChangesListenerWidget @implements Widget
 
-    @interface function LayoutChangesListeningWidget.processLayoutChanges
+    @interface function LayoutChangesListenerWidget.processLayoutChanges
 
 @intdone

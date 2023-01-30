@@ -3,3 +3,5 @@
 *.be.sh
 /app/dist/*
 !/app/dist/.gitkeep
+!/app/dist/single-script/
+!/app/dist/single-script/app

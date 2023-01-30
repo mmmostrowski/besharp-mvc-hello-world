@@ -99,7 +99,7 @@
             $widget.organizeChildrenOnLayout $context $this
         fi
 
-        if @is $widget LayoutChangesListeningWidget; then
+        if @is $widget LayoutChangesListenerWidget; then
             $widget.processLayoutChanges $context $this
         fi
     }
